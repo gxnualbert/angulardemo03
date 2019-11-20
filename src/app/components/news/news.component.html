@@ -1,0 +1,80 @@
+<p>news works!</p>
+<h1>angular 模板里面绑定数据</h1>
+<h2>{{msg}}</h2><br>
+<h3>{{username}}</h3><br>
+<h4>{{title}}<br></h4>
+
+<h5>{{student}}</h5><br>
+声明属性的几种方式<br>
+public 共有的。默认就是这种形式 。可以在类里使用，也可以在类外使用<br>
+protected 保护类型 只有在当前类和他的子类里面可以使用该变量<br>
+private  是有类型，只有在当前类以及他的子类中可以使用该类型<br>
+<hr>
+<h6>{{userInfo.username}}   通过object.name的方式获取</h6>
+<h6>{{userInfo.age}}   通过object.name的方式获取</h6>
+<h6>{{userInfo.sex}}   通过object.name的方式获取</h6>
+<hr>
+<br>
+{{message}}
+<h1>angular 模板里面绑定数据</h1>
+<hr>
+<hr>
+<hr>
+<hr>
+<h1>angular 模板里面绑定属性</h1>
+<div title="我是一个div的title">
+  鼠标移动进来，将能看到div中title的属性dddd
+</div>
+
+<div [title]="student">
+  div中的属性通过ts中的变量获取，获取方式为[title]='变量名'，如[title]='student',则title获取student的变量值<br>
+  加一个中括号表示属性是动态获取的
+</div>
+<br><br>
+<h1>angular 模板里面绑定HTML</h1>
+<div>没有转义，直接输出的值为：{{content}}</div>
+<span [innerHTML]="content" class="red">通过innerHTML标签输出的结果为原始的html语言</span>
+
+<br>
+<h1>angular 模板里面做简单的运算</h1>
+1+2={{1 + 2}}
+<br>
+<h1>angular 模板里面数组循环</h1><br>
+*ngFor="let item of arr含义：
+let item声明一个item变量；
+arr表示一个数组
+
+<ul>
+  <li *ngFor="let item of arr">
+    <!--    {{item}} 表示在 li 标签中循环取数据-->
+    {{item}}
+  </li>
+</ul>
+<br>
+<ol>
+  <li *ngFor="let item of list">
+    {{item}}
+  </li>
+</ol>
+
+
+<ol>
+  <li *ngFor="let item of Items">
+    {{item}}
+  </li>
+</ol>
+
+
+<ol>
+  <li *ngFor="let item of userlist">
+    {{item.username}}----{{item.age}}
+  </li>
+</ol>
+
+<ul>
+  <li *ngFor="let aaa of cars">{{aaa.category}}
+    <ol>
+      <li *ngFor="let ddd of aaa.list">{{ddd.title}}-----{{ddd.price}}</li>
+    </ol>
+  </li>
+</ul>
