@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {any} from 'codelyzer/util/function';
-
+declare const imageLabel: any;
+import * as $ from 'jquery';
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
@@ -18,6 +18,7 @@ export class NewsComponent implements OnInit {
     age: '24',
     sex: 'man'
   };
+
 
 
   public content = '<h2>我是一个html标签</h2>';
@@ -98,6 +99,38 @@ export class NewsComponent implements OnInit {
   }
 
   ngOnInit() {
+    $('#myImg').on('mouseover', (e) => {
+      e.preventDefault();
+      const $imageLabel =  imageLabel({
+        // img: $('[name=src]').val(),
+        // 图片地址
+        img: '../../../assets/img/carNum.jpg',
+        only: false,
+        editPop: true, // 修改内容弹窗
+
+        close:  (d) => {
+          if (d.length) {
+            alert(JSON.stringify(d));
+          }
+          return true;
+        },
+        clickArea:  () => { // 点击选区事件
+
+        },
+        edit:  ($d) => {
+          console.log($d);
+        },
+        startArea:  () => { //  开始绘制事件
+
+        },
+        confirm:  (d) => { // 确定按钮
+          if (d.length) {
+            alert(JSON.stringify(d));
+          }
+          return true;
+        }
+      });
+    });
   }
 
 }

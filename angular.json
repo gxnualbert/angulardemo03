@@ -28,9 +28,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./src/assets/css/edit.css",
+              "./src/assets/css/jquery.imageLabel.min.css"
+
             ],
-            "scripts": []
+            "scripts": [
+              "./src/assets/js/main.js",
+              "./src/assets/js/jquery.js"
+            ]
           },
           "configurations": {
             "production": {
