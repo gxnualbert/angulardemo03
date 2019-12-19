@@ -1,3 +1,33 @@
+angular使用外部js文件，参考：https://www.truecodex.com/course/angular-6/how-to-use-external-js-files-and-javascript-code-in-angular
+
+首先，要安装jQuery
+npm install jquery
+
+然后，在angular.json文件中，添加css样式文件和script：
+"scripts": [
+              "./src/assets/js/main.js",
+              "./src/assets/js/jquery.js"
+            ]
+            
+  "styles": [
+              "src/styles.scss",
+              "./src/assets/css/edit.css",
+              "./src/assets/css/jquery.imageLabel.min.css"
+
+            ],
+
+这里，main.js是我的一个自定义文件，里面有一个函数imageLabel。后面需要在ts文件中调用这个js函数
+
+在ts文件中，声明js
+declare const imageLabel: any;
+import * as $ from 'jquery';
+然后再ts调用即可：
+ imageLabel({}）
+
+
+
+
+
 # Angulardemo03
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
